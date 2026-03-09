@@ -1,0 +1,313 @@
+/* ============================================================== */
+/* GLOBAL RESET & BASE STYLES */
+/* ============================================================== */
+
+html,
+body {
+  height: 100%; /* Full viewport height para sa sticky footer at full-page sections */
+  margin: 0; /* Remove default margin */
+  box-sizing: border-box; /* Border & padding included in width/height calculations */
+}
+
+.app-wrapper {
+  min-height: 100%; /* Minimum full height para hindi mag-collapse ang content */
+  width: 100%; /* Full width ng page */
+}
+
+/* ============================================================== */
+/* CUSTOM FORM & TABLE UTILITY CLASSES */
+/* Ginawa para mas maigsi at consistent ang HTML */
+/* ============================================================== */
+
+/* Universal input, select, textarea styling */
+.custom-input {
+  width: 100%;
+  padding: 0.75rem 1rem; /* Comfortable padding inside inputs */
+  border-radius: 0.75rem; /* Rounded corners consistent sa design */
+  border: 2px solid rgba(25, 69, 23, 0.2); /* Subtle forest border */
+  background-color: rgba(
+    255,
+    255,
+    255,
+    0.5
+  ); /* Semi-transparent white para sa glassmorphism feel */
+  outline: none;
+  transition: all 0.3s; /* Smooth transition for focus/hover states */
+}
+
+.custom-input:focus {
+  border-color: #194517; /* forest color on focus */
+}
+
+/* Table header cells (Short, A4, Long, etc.) */
+.th-style {
+  text-align: center;
+  padding: 0.75rem 1rem;
+  color: #f7f6d9; /* cream text */
+  font-weight: 600;
+}
+
+/* Table data cells – regular text (e.g. "Black & White") */
+.td-text {
+  padding: 1rem;
+  color: #f7f6d9; /* cream text */
+  font-weight: 500;
+}
+
+/* Table data cells – price numbers */
+.td-num {
+  padding: 1rem;
+  text-align: center;
+  color: #e8ea00; /* sunny yellow for prices to stand out */
+  font-weight: 700;
+}
+
+/* ============================================================== */
+/* MAIN COLOR & BACKGROUND GRADIENTS */
+/* Mostly from Canva AI generated design */
+/* ============================================================== */
+
+.gradient-bg {
+  /* Full rainbow-ish gradient – used in some experimental areas */
+  background: linear-gradient(
+    135deg,
+    #194517 0%,
+    #2a6b26 25%,
+    #3d8a38 50%,
+    #f6ebaa 75%,
+    #f0f240 100%
+  );
+}
+
+.hero-gradient {
+  /* Main hero section background – dark forest to lighter green */
+  background: linear-gradient(
+    180deg,
+    #194517 0%,
+    #2a6b26 40%,
+    #3d8a38 70%,
+    #4a9d44 100%
+  );
+}
+
+.card-gradient {
+  /* Light cream/yellowish gradient for cards & modals */
+  background: linear-gradient(145deg, #f6ebaa 0%, #faf5d4 50%, #ffffff 100%);
+}
+
+/* Subtle noise texture overlay (used in hero & printing section) */
+.noise-overlay {
+  position: absolute;
+  inset: 0;
+  opacity: 0.03;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+  pointer-events: none; /* Hindi makaka-interact ang noise sa mouse */
+}
+
+/* ============================================================== */
+/* ANIMATIONS & TRANSITIONS */
+/* ============================================================== */
+
+.float-animation {
+  animation: float 6s ease-in-out infinite;
+}
+
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+}
+
+.pulse-glow {
+  animation: pulseGlow 2s ease-in-out infinite;
+}
+
+@keyframes pulseGlow {
+  0%,
+  100% {
+    box-shadow: 0 0 20px rgba(232, 234, 0, 0.3);
+  }
+  50% {
+    box-shadow: 0 0 40px rgba(232, 234, 0, 0.6);
+  }
+}
+
+.slide-up {
+  animation: slideUp 0.6s ease-out forwards;
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.stagger-1 {
+  animation-delay: 0.1s;
+}
+.stagger-2 {
+  animation-delay: 0.2s;
+}
+.stagger-3 {
+  animation-delay: 0.3s;
+}
+.stagger-4 {
+  animation-delay: 0.4s;
+}
+
+.btn-hover {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1); /* bouncy feel */
+}
+
+.btn-hover:hover {
+  transform: translateY(-3px) scale(1.02);
+  box-shadow: 0 10px 30px rgba(25, 69, 23, 0.3); /* forest shadow */
+}
+
+.table-row-hover:hover {
+  /* Sunny highlight effect on table row hover */
+  background: linear-gradient(
+    90deg,
+    rgba(232, 234, 0, 0.1) 0%,
+    rgba(246, 235, 170, 0.2) 100%
+  );
+}
+
+.member-card {
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.member-card:hover {
+  transform: translateY(-10px) rotateY(5deg);
+  box-shadow: 0 25px 50px rgba(25, 69, 23, 0.2);
+}
+
+.nav-link {
+  position: relative;
+  overflow: hidden;
+}
+
+.nav-link::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  width: 0;
+  height: 2px;
+  background: #e8ea00; /* sunny underline */
+  transition: all 0.3s ease;
+  transform: translateX(-50%);
+}
+
+.nav-link:hover::after {
+  width: 100%;
+}
+
+.star-rating .star {
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.star-rating .star:hover,
+.star-rating .star.active {
+  transform: scale(1.2);
+}
+
+.modal-backdrop {
+  backdrop-filter: blur(8px); /* Glassmorphism blur sa modal background */
+}
+
+.scroll-smooth {
+  scroll-behavior: smooth; /* Smooth scroll kapag nag-click ng anchor links */
+}
+
+/* ============================================================== */
+/* DECORATIVE GEOMETRIC SHAPES (hero section) */
+/* ============================================================== */
+
+.geometric-shape {
+  position: absolute;
+  opacity: 0.1;
+  pointer-events: none; /* Hindi makakaapekto sa clicks */
+}
+
+.shape-1 {
+  top: 10%;
+  left: 5%;
+  width: 100px;
+  height: 100px;
+  border: 3px solid #e8ea00;
+  border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
+  animation: morphShape 8s ease-in-out infinite;
+}
+
+.shape-2 {
+  top: 60%;
+  right: 10%;
+  width: 80px;
+  height: 80px;
+  background: linear-gradient(45deg, #e8ea00, #f6ebaa);
+  clip-path: polygon(50% 0%, 100% 38%, 82% 100%, 18% 100%, 0% 38%);
+  animation: rotateShape 12s linear infinite;
+}
+
+.shape-3 {
+  bottom: 20%;
+  left: 15%;
+  width: 60px;
+  height: 60px;
+  border: 2px solid #f6ebaa;
+  transform: rotate(45deg);
+  animation: pulseShape 4s ease-in-out infinite;
+}
+
+@keyframes morphShape {
+  0%,
+  100% {
+    border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
+  }
+  50% {
+    border-radius: 70% 30% 30% 70% / 70% 70% 30% 30%;
+  }
+}
+
+@keyframes rotateShape {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes pulseShape {
+  0%,
+  100% {
+    transform: rotate(45deg) scale(1);
+    opacity: 0.1;
+  }
+  50% {
+    transform: rotate(45deg) scale(1.2);
+    opacity: 0.2;
+  }
+}
+
+/* ============================================================== */
+/* QR CODE CONTAINER STYLING */
+/* ============================================================== */
+
+.qr-container {
+  background: white;
+  padding: 16px;
+  border-radius: 16px;
+  box-shadow: 0 10px 40px rgba(25, 69, 23, 0.15); /* subtle forest shadow */
+}

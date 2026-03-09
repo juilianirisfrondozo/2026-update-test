@@ -1,0 +1,1414 @@
+<!doctype html>
+<!-- Declares HTML5 document -->
+
+<html lang="en" class="h-full">
+  <!-- Root HTML element with language set to English and full height -->
+
+  <head>
+    <!-- Character encoding for proper text display -->
+    <meta charset="UTF-8" />
+
+    <!-- Ensures proper scaling on mobile devices -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- Browser tab / window title -->
+    <title>Printastic</title>
+
+    <!-- Custom stylesheet link -->
+    <link rel="stylesheet" href="printstyle.css" />
+
+    <!-- Google Fonts import: Poppins and Space Grotesk -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Tailwind CSS v3.4.17 loaded via CDN -->
+    <script src="https://cdn.tailwindcss.com/3.4.17"></script>
+  </head>
+
+  <body class="h-full font-poppins">
+    <!-- Main body container – full height, using Poppins as default font -->
+
+    <div class="app-wrapper overflow-auto scroll-smooth" id="app">
+      <!-- Primary wrapper for all page content with smooth scrolling -->
+
+      <!-- ──────── FIXED NAVIGATION BAR ──────── -->
+      <nav
+        class="fixed top-0 left-0 right-0 z-50 bg-forest/95 backdrop-blur-md border-b border-forest-light/30"
+      >
+        <!-- Main fixed top navigation bar with semi-transparent background and blur -->
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <!-- Responsive centered container -->
+
+          <div class="flex items-center justify-between h-16 md:h-20">
+            <!-- Flex row for logo + links + mobile button -->
+
+            <div class="flex items-center gap-3">
+              <!-- Logo group: icon + text -->
+
+              <div
+                class="w-10 h-10 md:w-12 md:h-12 rounded-xl bg-sunny flex items-center justify-center pulse-glow"
+              >
+                <!-- Logo background circle with pulsing glow effect -->
+                <svg
+                  class="w-6 h-6 md:w-7 md:h-7 text-forest"
+                  fill="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <!-- Printer icon SVG path -->
+                  <path
+                    d="M19 8h-1V3H6v5H5c-1.66 0-3 1.34-3 3v6h4v4h12v-4h4v-6c0-1.66-1.34-3-3-3zM8 5h8v3H8V5zm8 12v2H8v-4h8v2zm2-2v-2H6v2H4v-4c0-.55.45-1 1-1h14c.55 0 1 .45 1 1v4h-2z"
+                  />
+                </svg>
+              </div>
+
+              <span
+                id="nav-title"
+                class="font-space font-bold text-xl md:text-2xl text-cream"
+                >Printastic</span
+              >
+              <!-- Brand name text -->
+            </div>
+
+            <div class="hidden md:flex items-center gap-8">
+              <!-- Desktop navigation links container -->
+              <a
+                href="#home"
+                class="nav-link text-cream hover:text-sunny transition-colors font-medium"
+                >Home</a
+              >
+              <a
+                href="#printing"
+                class="nav-link text-cream hover:text-sunny transition-colors font-medium"
+                >Printing</a
+              >
+              <a
+                href="#services"
+                class="nav-link text-cream hover:text-sunny transition-colors font-medium"
+                >Service</a
+              >
+              <a
+                href="#about"
+                class="nav-link text-cream hover:text-sunny transition-colors font-medium"
+                >About</a
+              >
+            </div>
+
+            <button
+              id="mobile-menu-btn"
+              class="md:hidden p-2 text-cream hover:text-sunny transition-colors"
+            >
+              <!-- Mobile hamburger menu toggle button -->
+              <svg
+                class="w-6 h-6"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M4 6h16M4 12h16M4 18h16"
+                />
+              </svg>
+            </button>
+          </div>
+
+          <div id="mobile-menu" class="hidden md:hidden pb-4">
+            <!-- Mobile menu dropdown container -->
+            <div class="flex flex-col gap-3">
+              <a
+                href="#home"
+                class="text-cream hover:text-sunny transition-colors font-medium py-2"
+                >Home</a
+              >
+              <a
+                href="#printing"
+                class="text-cream hover:text-sunny transition-colors font-medium py-2"
+                >Printing</a
+              >
+              <a
+                href="#services"
+                class="text-cream hover:text-sunny transition-colors font-medium py-2"
+                >Service</a
+              >
+              <a
+                href="#about"
+                class="text-cream hover:text-sunny transition-colors font-medium py-2"
+                >About</a
+              >
+            </div>
+          </div>
+        </div>
+      </nav>
+
+      <!-- ──────── HERO / LANDING SECTION ──────── -->
+      <section
+        id="home"
+        class="hero-gradient relative min-h-screen pt-20 md:pt-24 overflow-hidden"
+      >
+        <!-- Full-screen hero section with gradient background -->
+
+        <div class="noise-overlay"></div>
+        <!-- Subtle noise texture layer -->
+
+        <div class="geometric-shape shape-1"></div>
+        <div class="geometric-shape shape-2"></div>
+        <div class="geometric-shape shape-3"></div>
+        <!-- Decorative floating geometric shapes -->
+
+        <div
+          class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 md:py-20 relative z-10"
+        >
+          <!-- Main content container with z-index above shapes -->
+
+          <div class="grid lg:grid-cols-2 gap-12 items-center">
+            <!-- Responsive two-column layout -->
+
+            <div class="text-center lg:text-left">
+              <!-- Left column – headline, tagline, buttons -->
+
+              <div
+                class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-sunny/20 border border-sunny/30 mb-6 slide-up"
+              >
+                <!-- Small badge / label above headline -->
+                <span
+                  class="w-2 h-2 rounded-full bg-sunny animate-pulse"
+                ></span>
+                <span class="text-sunny text-sm font-medium"
+                  >Technopreneur Booth • BSIT2D</span
+                >
+              </div>
+
+              <h1
+                id="hero-title"
+                class="font-space font-bold text-4xl sm:text-5xl md:text-6xl lg:text-7xl text-cream mb-6 slide-up stagger-1"
+              >
+                Printastic
+              </h1>
+              <!-- Main page headline -->
+
+              <p
+                id="hero-tagline"
+                class="text-lg md:text-xl text-cream/80 mb-8 max-w-xl mx-auto lg:mx-0 slide-up stagger-2"
+              >
+                Your one-stop printing solution for students! Fast, affordable,
+                and quality prints delivered right to your campus.
+              </p>
+              <!-- Supporting tagline paragraph -->
+
+              <div
+                class="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start slide-up stagger-3"
+              >
+                <!-- Call-to-action buttons group -->
+                <a
+                  href="#services"
+                  class="btn-hover inline-flex items-center justify-center gap-2 px-8 py-4 bg-sunny text-forest font-semibold rounded-2xl"
+                >
+                  <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                    <path
+                      d="M19 8h-1V3H6v5H5c-1.66 0-3 1.34-3 3v6h4v4h12v-4h4v-6c0-1.66-1.34-3-3-3zM8 5h8v3H8V5zm8 12v2H8v-4h8v2z"
+                    />
+                  </svg>
+                  Start Printing
+                </a>
+                <a
+                  href="#printing"
+                  class="btn-hover inline-flex items-center justify-center gap-2 px-8 py-4 bg-transparent border-2 border-cream text-cream font-semibold rounded-2xl hover:bg-cream hover:text-forest"
+                >
+                  View Prices
+                </a>
+              </div>
+            </div>
+
+            <div class="relative">
+              <!-- Right column – how it works steps -->
+
+              <div class="grid gap-4">
+                <div
+                  class="card-gradient rounded-2xl p-6 shadow-xl slide-up stagger-2 transform hover:scale-105 transition-all duration-300"
+                >
+                  <!-- Step card 1 -->
+                  <div class="flex items-start gap-4">
+                    <div
+                      class="w-12 h-12 rounded-xl bg-forest flex items-center justify-center flex-shrink-0"
+                    >
+                      <span class="text-sunny font-bold text-xl">1</span>
+                    </div>
+                    <div>
+                      <h3
+                        class="font-space font-semibold text-forest text-lg mb-1"
+                      >
+                        Upload Your Document
+                      </h3>
+                      <p class="text-forest/70 text-sm">
+                        Send your files via Bluetooth, Email, or upload to our
+                        cloud storage.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+
+                <div
+                  class="card-gradient rounded-2xl p-6 shadow-xl slide-up stagger-3 transform hover:scale-105 transition-all duration-300"
+                >
+                  <!-- Step card 2 -->
+                  <div class="flex items-start gap-4">
+                    <div
+                      class="w-12 h-12 rounded-xl bg-forest flex items-center justify-center flex-shrink-0"
+                    >
+                      <span class="text-sunny font-bold text-xl">2</span>
+                    </div>
+                    <div>
+                      <h3
+                        class="font-space font-semibold text-forest text-lg mb-1"
+                      >
+                        Choose Your Options
+                      </h3>
+                      <p class="text-forest/70 text-sm">
+                        Select paper size, color mode, and quantity for your
+                        print job.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+
+                <div
+                  class="card-gradient rounded-2xl p-6 shadow-xl slide-up stagger-4 transform hover:scale-105 transition-all duration-300"
+                >
+                  <!-- Step card 3 -->
+                  <div class="flex items-start gap-4">
+                    <div
+                      class="w-12 h-12 rounded-xl bg-forest flex items-center justify-center flex-shrink-0"
+                    >
+                      <span class="text-sunny font-bold text-xl">3</span>
+                    </div>
+                    <div>
+                      <h3
+                        class="font-space font-semibold text-forest text-lg mb-1"
+                      >
+                        Pick Up & Pay
+                      </h3>
+                      <p class="text-forest/70 text-sm">
+                        Get notified when ready! Pick up at our booth and pay on
+                        delivery.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="absolute bottom-0 left-0 right-0">
+          <!-- Bottom curved wave divider -->
+          <svg
+            viewBox="0 0 1440 120"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M0 120L48 105C96 90 192 60 288 45C384 30 480 30 576 37.5C672 45 768 60 864 67.5C960 75 1056 75 1152 67.5C1248 60 1344 45 1392 37.5L1440 30V120H1392C1344 120 1248 120 1152 120C1056 120 960 120 864 120C768 120 672 120 576 120C480 120 384 120 288 120C192 120 96 120 48 120H0Z"
+              fill="#f6ebaa"
+            />
+          </svg>
+        </div>
+      </section>
+
+      <!-- ──────── SERVICES / QUICK ACTIONS SECTION ──────── -->
+      <section id="services" class="bg-cream relative py-16 md:py-24">
+        <!-- Section showing different ways to send print jobs -->
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div class="text-center mb-12">
+            <span
+              class="inline-block px-4 py-2 rounded-full bg-forest/10 text-forest text-sm font-medium mb-4"
+              >Quick Actions</span
+            >
+            <h2
+              class="font-space font-bold text-3xl md:text-4xl lg:text-5xl text-forest mb-4"
+            >
+              How Can We Help?
+            </h2>
+            <p class="text-forest/70 max-w-2xl mx-auto">
+              Choose your preferred way to send your documents and we'll handle
+              the rest!
+            </p>
+          </div>
+
+          <div
+            class="grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-4 md:gap-6 justify-items-center max-w-5xl mx-auto"
+          >
+            <!-- Grid of service option cards -->
+
+            <button
+              onclick="openBluetoothModal()"
+              class="btn-hover card-gradient rounded-2xl p-6 shadow-lg text-left group w-full max-w-xs"
+            >
+              <!-- Bluetooth sending option card -->
+              <div
+                class="w-14 h-14 rounded-xl bg-forest flex items-center justify-center mb-4 group-hover:bg-forest-light transition-colors mx-auto"
+              >
+                <svg
+                  class="w-7 h-7 text-sunny"
+                  fill="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    d="M17.71 7.71L12 2h-1v7.59L6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 11 14.41V22h1l5.71-5.71-4.3-4.29 4.3-4.29zM13 5.83l1.88 1.88L13 9.59V5.83zm1.88 10.46L13 18.17v-3.76l1.88 1.88z"
+                  />
+                </svg>
+              </div>
+              <h3
+                class="font-space font-semibold text-forest text-lg mb-2 text-center"
+              >
+                Bluetooth
+              </h3>
+              <p class="text-forest/60 text-sm text-center">
+                Send files directly via Bluetooth connection
+              </p>
+            </button>
+
+            <a
+              href="mailto:plpprintastic@gmail.com"
+              class="btn-hover card-gradient rounded-2xl p-6 shadow-lg text-left group block w-full max-w-xs text-center"
+            >
+              <!-- Email sending option card -->
+              <div
+                class="w-14 h-14 rounded-xl bg-forest flex items-center justify-center mb-4 group-hover:bg-forest-light transition-colors mx-auto"
+              >
+                <svg
+                  class="w-7 h-7 text-sunny"
+                  fill="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"
+                  />
+                </svg>
+              </div>
+              <h3 class="font-space font-semibold text-forest text-lg mb-2">
+                Email
+              </h3>
+              <p class="text-forest/60 text-sm">
+                Send to plpprintastic @gmail.com
+              </p>
+            </a>
+
+            <button
+              onclick="openMessageModal()"
+              class="btn-hover card-gradient rounded-2xl p-6 shadow-lg text-left group w-full max-w-xs text-center"
+            >
+              <!-- Message / chat option card -->
+              <div
+                class="w-14 h-14 rounded-xl bg-forest flex items-center justify-center mb-4 group-hover:bg-forest-light transition-colors mx-auto"
+              >
+                <svg
+                  class="w-7 h-7 text-sunny"
+                  fill="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    d="M20 2H4c-1.1 0-2 .9-2 2v18l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm0 14H6l-2 2V4h16v12z"
+                  />
+                </svg>
+              </div>
+              <h3 class="font-space font-semibold text-forest text-lg mb-2">
+                Message
+              </h3>
+              <p class="text-forest/60 text-sm">
+                Send us a quick message with your request
+              </p>
+            </button>
+
+            <button
+              onclick="showToast('Facebook DM integration coming soon!')"
+              class="btn-hover card-gradient rounded-2xl p-6 shadow-lg text-left group w-full max-w-xs text-center"
+            >
+              <!-- Facebook DM option (placeholder) -->
+              <div
+                class="w-14 h-14 rounded-xl bg-forest flex items-center justify-center mb-4 group-hover:bg-forest-light transition-colors mx-auto"
+              >
+                <svg
+                  class="w-7 h-7 text-sunny"
+                  fill="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    d="M22 12c0-5.52-4.48-10-10-10S2 6.48 2 12c0 4.84 3.44 8.87 8 9.8V15H8v-3h2V9.5C10 7.57 11.57 6 13.5 6H16v3h-2c-.55 0-1 .45-1 1v2h3v3h-3v6.95c5.05-.5 9-4.76 9-9.95z"
+                  />
+                </svg>
+              </div>
+              <h3 class="font-space font-semibold text-forest text-lg mb-2">
+                Facebook
+              </h3>
+              <p class="text-forest/60 text-sm">
+                DM us on Facebook (Coming Soon)
+              </p>
+            </button>
+
+            <button
+              onclick="openRateModal()"
+              class="btn-hover card-gradient rounded-2xl p-6 shadow-lg text-left group w-full max-w-xs text-center"
+            >
+              <!-- Rate / feedback button card -->
+              <div
+                class="w-14 h-14 rounded-xl bg-sunny flex items-center justify-center mb-4 group-hover:bg-sunny-light transition-colors mx-auto"
+              >
+                <svg
+                  class="w-7 h-7 text-forest"
+                  fill="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"
+                  />
+                </svg>
+              </div>
+              <h3 class="font-space font-semibold text-forest text-lg mb-2">
+                Rate Us
+              </h3>
+              <p class="text-forest/60 text-sm">
+                Help us improve with your feedback
+              </p>
+            </button>
+          </div>
+        </div>
+      </section>
+
+      <!-- ──────── PRINTING PRICE LIST SECTION ──────── -->
+      <section
+        id="printing"
+        class="bg-forest relative py-16 md:py-24 overflow-hidden"
+      >
+        <!-- Pricing / rates section -->
+
+        <div class="noise-overlay"></div>
+        <!-- Noise texture overlay -->
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+          <div class="text-center mb-12">
+            <span
+              class="inline-block px-4 py-2 rounded-full bg-sunny/20 text-sunny text-sm font-medium mb-4"
+              >Transparent Pricing</span
+            >
+            <h2
+              class="font-space font-bold text-3xl md:text-4xl lg:text-5xl text-cream mb-4"
+            >
+              Printing Price List
+            </h2>
+            <p class="text-cream/70 max-w-2xl mx-auto">
+              Affordable rates for all your printing needs. All prices are per
+              page.
+            </p>
+          </div>
+
+          <div class="flex flex-wrap justify-center gap-2 mb-8">
+            <!-- Tab buttons to switch price tables -->
+            <button
+              onclick="showPriceTable('photocopy')"
+              id="tab-photocopy"
+              class="price-tab px-4 py-2 rounded-full font-medium text-sm transition-all bg-sunny text-forest"
+            >
+              Photocopying
+            </button>
+            <button
+              onclick="showPriceTable('text')"
+              id="tab-text"
+              class="price-tab px-4 py-2 rounded-full font-medium text-sm transition-all bg-forest-light text-cream"
+            >
+              Text Only
+            </button>
+            <button
+              onclick="showPriceTable('textpic')"
+              id="tab-textpic"
+              class="price-tab px-4 py-2 rounded-full font-medium text-sm transition-all bg-forest-light text-cream"
+            >
+              Text + Picture
+            </button>
+            <button
+              onclick="showPriceTable('image')"
+              id="tab-image"
+              class="price-tab px-4 py-2 rounded-full font-medium text-sm transition-all bg-forest-light text-cream"
+            >
+              Image Only
+            </button>
+          </div>
+
+          <div
+            id="price-tables"
+            class="bg-cream/10 backdrop-blur-sm rounded-3xl p-4 md:p-8 border border-cream/20"
+          >
+            <!-- Container for all price tables -->
+
+            <div id="table-photocopy" class="price-table">
+              <!-- Photocopying rates table -->
+              <h3
+                class="font-space font-bold text-xl md:text-2xl text-sunny mb-6 flex items-center gap-3"
+              >
+                <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                  <path
+                    d="M16 1H4c-1.1 0-2 .9-2 2v14h2V3h12V1zm3 4H8c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h11c1.1 0 2-.9 2-2V7c0-1.1-.9-2-2-2zm0 16H8V7h11v14z"
+                  />
+                </svg>
+                Photocopying Prices
+              </h3>
+              <div class="overflow-x-auto">
+                <table class="w-full">
+                  <thead>
+                    <tr class="border-b border-cream/30">
+                      <th class="th-style text-left">Type</th>
+                      <th class="th-style">Short</th>
+                      <th class="th-style">A4</th>
+                      <th class="th-style">Long</th>
+                      <th class="th-style">Back-to-Back</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr
+                      class="table-row-hover border-b border-cream/10 transition-colors"
+                    >
+                      <td class="td-text">Black & White</td>
+                      <td class="td-num">₱2</td>
+                      <td class="td-num">₱2</td>
+                      <td class="td-num">₱3</td>
+                      <td class="td-num">+₱1</td>
+                    </tr>
+                    <tr
+                      class="table-row-hover border-b border-cream/10 transition-colors"
+                    >
+                      <td class="td-text">Partially Colored</td>
+                      <td class="td-num">₱4</td>
+                      <td class="td-num">₱4</td>
+                      <td class="td-num">₱6</td>
+                      <td class="td-num">+₱2</td>
+                    </tr>
+                    <tr class="table-row-hover transition-colors">
+                      <td class="td-text">Fully Colored</td>
+                      <td class="td-num">₱6</td>
+                      <td class="td-num">₱6</td>
+                      <td class="td-num">₱8</td>
+                      <td class="td-num">+₱2</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+
+            <div id="table-text" class="price-table hidden">
+              <!-- Text-only printing rates table -->
+              <h3
+                class="font-space font-bold text-xl md:text-2xl text-sunny mb-6 flex items-center gap-3"
+              >
+                <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                  <path
+                    d="M2.5 4v3h5v12h3V7h5V4h-13zm19 5h-9v3h3v7h3v-7h3V9z"
+                  />
+                </svg>
+                Docs Printing - Text Only
+              </h3>
+              <div class="overflow-x-auto">
+                <table class="w-full">
+                  <thead>
+                    <tr class="border-b border-cream/30">
+                      <th class="th-style text-left">Type</th>
+                      <th class="th-style">Short</th>
+                      <th class="th-style">A4</th>
+                      <th class="th-style">Long</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr
+                      class="table-row-hover border-b border-cream/10 transition-colors"
+                    >
+                      <td class="td-text">Black & White</td>
+                      <td class="td-num">₱3</td>
+                      <td class="td-num">₱3</td>
+                      <td class="td-num">₱4</td>
+                    </tr>
+                    <tr
+                      class="table-row-hover border-b border-cream/10 transition-colors"
+                    >
+                      <td class="td-text">Partially Colored</td>
+                      <td class="td-num">₱4</td>
+                      <td class="td-num">₱4</td>
+                      <td class="td-num">₱5</td>
+                    </tr>
+                    <tr class="table-row-hover transition-colors">
+                      <td class="td-text">Fully Colored</td>
+                      <td class="td-num">₱5</td>
+                      <td class="td-num">₱5</td>
+                      <td class="td-num">₱6</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+
+            <div id="table-textpic" class="price-table hidden">
+              <!-- Text + picture printing rates table -->
+              <h3
+                class="font-space font-bold text-xl md:text-2xl text-sunny mb-6 flex items-center gap-3"
+              >
+                <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                  <path
+                    d="M21 19V5c0-1.1-.9-2-2-2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2zM8.5 13.5l2.5 3.01L14.5 12l4.5 6H5l3.5-4.5z"
+                  />
+                </svg>
+                Docs Printing - Text with Picture
+              </h3>
+              <div class="overflow-x-auto">
+                <table class="w-full">
+                  <thead>
+                    <tr class="border-b border-cream/30">
+                      <th class="th-style text-left">Type</th>
+                      <th class="th-style">Short</th>
+                      <th class="th-style">A4</th>
+                      <th class="th-style">Long</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr
+                      class="table-row-hover border-b border-cream/10 transition-colors"
+                    >
+                      <td class="td-text">Black & White</td>
+                      <td class="td-num">₱4</td>
+                      <td class="td-num">₱4</td>
+                      <td class="td-num">₱6</td>
+                    </tr>
+                    <tr
+                      class="table-row-hover border-b border-cream/10 transition-colors"
+                    >
+                      <td class="td-text">Partially Colored</td>
+                      <td class="td-num">₱6</td>
+                      <td class="td-num">₱6</td>
+                      <td class="td-num">₱8</td>
+                    </tr>
+                    <tr class="table-row-hover transition-colors">
+                      <td class="td-text">Fully Colored</td>
+                      <td class="td-num">₱8</td>
+                      <td class="td-num">₱8</td>
+                      <td class="td-num">₱10</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+
+            <div id="table-image" class="price-table hidden">
+              <!-- Image-only printing rates table -->
+              <h3
+                class="font-space font-bold text-xl md:text-2xl text-sunny mb-6 flex items-center gap-3"
+              >
+                <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                  <path
+                    d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 16H5V5h14v14zm-5-7l-3 3.72L9 13l-3 4h12l-4-5z"
+                  />
+                </svg>
+                Docs Printing - Image Only
+              </h3>
+              <div class="overflow-x-auto">
+                <table class="w-full">
+                  <thead>
+                    <tr class="border-b border-cream/30">
+                      <th class="th-style text-left">Type</th>
+                      <th class="th-style">Short</th>
+                      <th class="th-style">A4</th>
+                      <th class="th-style">Long</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr
+                      class="table-row-hover border-b border-cream/10 transition-colors"
+                    >
+                      <td class="td-text">Black & White</td>
+                      <td class="td-num">₱5</td>
+                      <td class="td-num">₱5</td>
+                      <td class="td-num">₱7</td>
+                    </tr>
+                    <tr
+                      class="table-row-hover border-b border-cream/10 transition-colors"
+                    >
+                      <td class="td-text">Partially Colored</td>
+                      <td class="td-num">₱8</td>
+                      <td class="td-num">₱8</td>
+                      <td class="td-num">₱10</td>
+                    </tr>
+                    <tr class="table-row-hover transition-colors">
+                      <td class="td-text">Fully Colored</td>
+                      <td class="td-num">₱11</td>
+                      <td class="td-num">₱11</td>
+                      <td class="td-num">₱13</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+
+          <div class="mt-8 card-gradient rounded-2xl p-6 md:p-8">
+            <!-- Special paper / custom request info card -->
+            <div
+              class="flex flex-col md:flex-row items-start md:items-center gap-4"
+            >
+              <div
+                class="w-12 h-12 rounded-xl bg-forest flex items-center justify-center flex-shrink-0"
+              >
+                <svg
+                  class="w-6 h-6 text-sunny"
+                  fill="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-2 10H7v-2h10v2z"
+                  />
+                </svg>
+              </div>
+              <div class="flex-1">
+                <h4 class="font-space font-semibold text-forest text-lg mb-1">
+                  Special Paper Requests
+                </h4>
+                <p class="text-forest/70 text-sm">
+                  Need special paper? Prices depend on size and availability.
+                  Use the message form below to inquire about your specific
+                  needs!
+                </p>
+              </div>
+              <button
+                onclick="openMessageModal()"
+                class="btn-hover px-6 py-3 bg-forest text-sunny rounded-xl font-semibold text-sm"
+              >
+                Inquire Now
+              </button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ──────── ORDER FORM SECTION ──────── -->
+      <section class="bg-cream relative py-16 md:py-24">
+        <!-- Print job submission form section -->
+
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div class="text-center mb-12">
+            <span
+              class="inline-block px-4 py-2 rounded-full bg-forest/10 text-forest text-sm font-medium mb-4"
+              >Place Your Order</span
+            >
+            <h2
+              class="font-space font-bold text-3xl md:text-4xl lg:text-5xl text-forest mb-4"
+            >
+              Submit Print Request
+            </h2>
+            <p class="text-forest/70 max-w-2xl mx-auto">
+              Fill out the form below and we'll prepare your prints for pickup.
+            </p>
+          </div>
+
+          <form
+            id="order-form"
+            class="card-gradient rounded-3xl p-6 md:p-10 shadow-2xl"
+          >
+            <!-- Main print request submission form -->
+
+          <div class="grid md:grid-cols-2 gap-6">
+  
+          <div>
+            <label
+              for="customer-name"
+              class="block text-forest font-medium mb-2"
+              >Full Name</label
+            >
+            <input
+              type="text"
+              id="customer-name"
+              required
+              class="custom-input"
+              placeholder="Enter your full name"
+            />
+          </div>
+
+          <div>
+            <label
+              for="student-year-section"
+              class="block text-forest font-medium mb-2"
+              >Year & Section</label
+            >
+            <input
+              type="text"
+              id="student-year-section"
+              required
+              class="custom-input"
+              placeholder="e.g., 2nd Year - BSIT2D"
+            />
+          </div>
+
+  <div class="md:col-span-2">
+    <label
+      for="customer-email"
+      class="block text-forest font-medium mb-2"
+      >Email Address</label
+    >
+    <input
+      type="email"
+      id="customer-email"
+      required
+      class="custom-input"
+      placeholder="Enter your email"
+    />
+  </div>
+
+</div>
+
+            <div class="grid md:grid-cols-2 gap-6 mt-6">
+              <div>
+                <label
+                  for="pickup-location"
+                  class="block text-forest font-medium mb-2"
+                  >Pickup Location</label
+                >
+                <select id="pickup-location" required class="custom-input">
+                  <option value="">Select location</option>
+                  <option value="booth">Technopreneur Booth</option>
+                  <option value="PLP Facade">PLP Facade</option>
+                  <option value="PLP Library">PLP Library</option>
+                  <option value="PLP Main Entrance">PLP Main Entrance</option>
+                  <option value="Near Cafeteria">Near Cafeteria</option>
+                  <option value="3rd floor RM310">
+                    3rd floor RM310 - Only every Friday 7:30-10:30 AM
+                  </option>
+                </select>
+              </div>
+              <div>
+                <label
+                  for="pickup-time"
+                  class="block text-forest font-medium mb-2"
+                  >Preferred Pickup Time</label
+                >
+                <input
+                  type="time"
+                  id="pickup-time"
+                  required
+                  class="custom-input"
+                />
+              </div>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-6 mt-6">
+              <div>
+                <label
+                  for="paper-size"
+                  class="block text-forest font-medium mb-2"
+                  >Paper Size</label
+                >
+                <select id="paper-size" required class="custom-input">
+                  <option value="">Select size</option>
+                  <option value="short">Short (8.5 x 11)</option>
+                  <option value="a4">A4</option>
+                  <option value="long">Long (8.5 x 13)</option>
+                </select>
+              </div>
+              <div>
+                <label
+                  for="color-mode"
+                  class="block text-forest font-medium mb-2"
+                  >Color Mode</label
+                >
+                <select id="color-mode" required class="custom-input">
+                  <option value="">Select color</option>
+                  <option value="bw">Black & White</option>
+                  <option value="partial">Partially Colored</option>
+                  <option value="full">Fully Colored</option>
+                </select>
+              </div>
+              <div>
+                <label for="copies" class="block text-forest font-medium mb-2"
+                  >Number of Copies</label
+                >
+                <input
+                  type="number"
+                  id="copies"
+                  min="1"
+                  value="1"
+                  required
+                  class="custom-input"
+                />
+              </div>
+            </div>
+
+            <div class="mt-6">
+              <label
+                for="payment-method"
+                class="block text-forest font-medium mb-2"
+                >Payment Method</label
+              >
+              <select id="payment-method" required class="custom-input">
+                <option value="">Select payment method</option>
+                <option value="counter">Pay at Counter</option>
+                <option value="gcash">GCash (Coming Soon)</option>
+                <option value="bank">Bank Transfer (Coming Soon)</option>
+              </select>
+              <p class="text-forest/60 text-xs mt-2">
+                Note: GCash and Bank Transfer features will be available soon.
+              </p>
+            </div>
+
+            <div class="mt-6">
+              <label
+                for="special-instructions"
+                class="block text-forest font-medium mb-2"
+                >Special Instructions (Optional)</label
+              >
+              <textarea
+                id="special-instructions"
+                rows="3"
+                class="custom-input resize-none"
+                placeholder="Any special requests or instructions..."
+              ></textarea>
+            </div>
+
+            <div
+              class="mt-6 p-6 rounded-2xl bg-forest/5 border-2 border-dashed border-forest/30"
+            >
+              <!-- File upload / cloud link area -->
+              <div class="text-center">
+                <div
+                  class="w-16 h-16 rounded-full bg-forest/10 flex items-center justify-center mx-auto mb-4"
+                >
+                  <svg
+                    class="w-8 h-8 text-forest"
+                    fill="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      d="M19.35 10.04C18.67 6.59 15.64 4 12 4 9.11 4 6.6 5.64 5.35 8.04 2.34 8.36 0 10.91 0 14c0 3.31 2.69 6 6 6h13c2.76 0 5-2.24 5-5 0-2.64-2.05-4.78-4.65-4.96zM14 13v4h-4v-4H7l5-5 5 5h-3z"
+                    />
+                  </svg>
+                </div>
+                <h4 class="font-space font-semibold text-forest text-lg mb-2">
+                  Upload Documents to Cloud
+                </h4>
+                <p class="text-forest/60 text-sm mb-4">
+                  Share your PDF, Word documents, or links. Files will be sent
+                  to our Gmail.
+                </p>
+                <input
+                  type="url"
+                  id="cloud-link"
+                  class="custom-input max-w-md mx-auto block"
+                  placeholder="Paste Google Drive link or share link here"
+                />
+              </div>
+            </div>
+
+            <button
+              type="submit"
+              class="btn-hover w-full mt-8 py-4 bg-forest text-sunny rounded-2xl font-bold text-lg flex items-center justify-center gap-3"
+            >
+              <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M9 16.2L4.8 12l-1.4 1.4L9 19 21 7l-1.4-1.4L9 16.2z" />
+              </svg>
+              Submit Print Request
+            </button>
+          </form>
+        </div>
+      </section>
+
+      <!-- ──────── ABOUT / TEAM SECTION ──────── -->
+      <section
+        id="about"
+        class="bg-forest relative py-16 md:py-24 overflow-hidden"
+      >
+        <!-- About the project and team section -->
+
+        <div class="noise-overlay"></div>
+        <!-- Noise texture overlay -->
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+          <div class="text-center mb-12">
+            <span
+              class="inline-block px-4 py-2 rounded-full bg-sunny/20 text-sunny text-sm font-medium mb-4"
+              >Meet the Team</span
+            >
+            <h2
+              class="font-space font-bold text-3xl md:text-4xl lg:text-5xl text-cream mb-4"
+            >
+              About Printastic
+            </h2>
+            <p class="text-cream/70 max-w-3xl mx-auto">
+              Created by passionate BSIT2D students for The Entrepreneurial Mind
+              subject.
+            </p>
+          </div>
+
+          <div class="card-gradient rounded-3xl p-8 md:p-10 mb-12 text-center">
+            <!-- Why we made Printastic card -->
+            <h3
+              class="font-space font-bold text-2xl md:text-3xl text-forest mb-4"
+            >
+              Why We Created Printastic
+            </h3>
+            <p class="text-forest/80 max-w-2xl mx-auto leading-relaxed">
+              As students ourselves, we know the struggle of finding affordable
+              and quick printing services on campus. That's why we created
+              <strong>Printastic</strong>.
+            </p>
+          </div>
+
+          <div class="grid sm:grid-cols-2 lg:grid-cols-5 gap-6">
+            <!-- Team member cards grid -->
+
+            <div class="member-card card-gradient rounded-2xl p-6 text-center">
+              <!-- Team member placeholder card 1 -->
+              <div
+                class="w-24 h-24 rounded-full bg-gradient-to-br from-forest to-forest-light mx-auto mb-4 flex items-center justify-center overflow-hidden"
+              >
+                <svg
+                  class="w-14 h-14 text-sunny"
+                  fill="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"
+                  />
+                </svg>
+              </div>
+              <h4 class="font-space font-semibold text-forest text-lg">
+                Member 1
+              </h4>
+              <p class="text-forest/60 text-sm mt-1">BSIT2D</p>
+            </div>
+
+            <div class="member-card card-gradient rounded-2xl p-6 text-center">
+              <!-- Team member placeholder card 2 -->
+              <div
+                class="w-24 h-24 rounded-full bg-gradient-to-br from-forest to-forest-light mx-auto mb-4 flex items-center justify-center overflow-hidden"
+              >
+                <svg
+                  class="w-14 h-14 text-sunny"
+                  fill="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"
+                  />
+                </svg>
+              </div>
+              <h4 class="font-space font-semibold text-forest text-lg">
+                Member 2
+              </h4>
+              <p class="text-forest/60 text-sm mt-1">BSIT2D</p>
+            </div>
+
+            <div class="member-card card-gradient rounded-2xl p-6 text-center">
+              <!-- Team member placeholder card 3 -->
+              <div
+                class="w-24 h-24 rounded-full bg-gradient-to-br from-forest to-forest-light mx-auto mb-4 flex items-center justify-center overflow-hidden"
+              >
+                <svg
+                  class="w-14 h-14 text-sunny"
+                  fill="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"
+                  />
+                </svg>
+              </div>
+              <h4 class="font-space font-semibold text-forest text-lg">
+                Member 3
+              </h4>
+              <p class="text-forest/60 text-sm mt-1">BSIT2D</p>
+            </div>
+
+            <div class="member-card card-gradient rounded-2xl p-6 text-center">
+              <!-- Team member placeholder card 4 -->
+              <div
+                class="w-24 h-24 rounded-full bg-gradient-to-br from-forest to-forest-light mx-auto mb-4 flex items-center justify-center overflow-hidden"
+              >
+                <svg
+                  class="w-14 h-14 text-sunny"
+                  fill="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"
+                  />
+                </svg>
+              </div>
+              <h4 class="font-space font-semibold text-forest text-lg">
+                Member 4
+              </h4>
+              <p class="text-forest/60 text-sm mt-1">BSIT2D</p>
+            </div>
+
+            <div class="member-card card-gradient rounded-2xl p-6 text-center">
+              <!-- Team member placeholder card 5 -->
+              <div
+                class="w-24 h-24 rounded-full bg-gradient-to-br from-forest to-forest-light mx-auto mb-4 flex items-center justify-center overflow-hidden"
+              >
+                <svg
+                  class="w-14 h-14 text-sunny"
+                  fill="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"
+                  />
+                </svg>
+              </div>
+              <h4 class="font-space font-semibold text-forest text-lg">
+                Member 5
+              </h4>
+              <p class="text-forest/60 text-sm mt-1">BSIT2D</p>
+            </div>
+          </div>
+
+          <div class="mt-16 text-center">
+            <!-- QR code access area -->
+            <h3 class="font-space font-bold text-2xl text-cream mb-6">
+              Scan for Quick Access
+            </h3>
+              <div class="qr-container inline-block">
+              <div class="qr-container flex flex-col sm:flex-row justify-center items-center gap-8 md:gap-12">
+  <!-- Website QR -->
+  <div class="text-center">
+    <img 
+      src="PRINTASTIC.png" 
+      alt="QR Code for Printastic Website" 
+      class="w-40 h-40 md:w-48 md:h-48 mx-auto rounded-xl shadow-lg border-4 border-sunny/40 object-contain bg-white p-2"
+      loading="lazy"
+    >
+    <p class="text-forest text-sm mt-3 font-medium">
+      Scan to visit Printastic
+    </p>
+  </div>
+
+  <!-- GCash QR -->
+  <div class="text-center">
+    <img 
+      src="G-CASH QR.jpg" 
+      alt="GCash QR for Payment" 
+      class="w-40 h-40 md:w-48 md:h-48 mx-auto rounded-xl shadow-lg border-4 border-sunny/40 object-contain bg-white p-2"
+      loading="lazy"
+    >
+    <p class="text-forest text-sm mt-3 font-medium">
+      Scan to pay via GCash
+    </p>
+  </div>
+</div>
+      </section>
+
+      <!-- ──────── FOOTER ──────── -->
+      <footer class="bg-forest-light py-8">
+        <!-- Bottom copyright and project info footer -->
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <p class="text-cream/60 text-sm">
+            © 2024 Printastic. Created by BSIT2D Students.
+          </p>
+          <p class="text-cream/40 text-xs mt-2">Technopreneur Booth Project</p>
+        </div>
+      </footer>
+
+      <!-- ──────── MODALS ──────── -->
+
+      <div id="bluetooth-modal" class="fixed inset-0 z-50 hidden">
+        <!-- Bluetooth device name modal -->
+        <div
+          class="absolute inset-0 bg-forest/80 modal-backdrop"
+          onclick="closeBluetoothModal()"
+        ></div>
+        <div
+          class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-full max-w-md p-4"
+        >
+          <div class="card-gradient rounded-2xl p-6 md:p-8 shadow-2xl">
+            <h3 class="font-space font-bold text-xl text-forest mb-6">
+              Send via Bluetooth
+            </h3>
+            <form id="bluetooth-form" onsubmit="submitBluetoothForm(event)">
+              <input
+                type="text"
+                id="bluetooth-device"
+                required
+                class="custom-input mb-4"
+                placeholder="Enter your device name"
+              />
+              <button
+                type="submit"
+                class="btn-hover w-full py-3 bg-forest text-sunny rounded-xl font-semibold"
+              >
+                Confirm Device
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
+
+      <div id="message-modal" class="fixed inset-0 z-50 hidden">
+        <!-- Message / inquiry form modal -->
+        <div
+          class="absolute inset-0 bg-forest/80 modal-backdrop"
+          onclick="closeMessageModal()"
+        ></div>
+        <div
+          class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-full max-w-lg p-4"
+        >
+          <div
+            class="card-gradient rounded-2xl p-6 md:p-8 shadow-2xl max-h-[90vh] overflow-y-auto"
+          >
+            <h3 class="font-space font-bold text-xl text-forest mb-6">
+              Send Us a Message
+            </h3>
+            <form id="message-form" onsubmit="submitMessageForm(event)">
+              <input
+                type="text"
+                id="message-name"
+                required
+                class="custom-input mb-4"
+                placeholder="Enter your name"
+              />
+              <input
+                type="text"
+                id="message-contact"
+                required
+                class="custom-input mb-4"
+                placeholder="How can we reach you?"
+              />
+              <textarea
+                id="message-content"
+                rows="4"
+                required
+                class="custom-input mb-4 resize-none"
+                placeholder="Type your message here..."
+              ></textarea>
+              <button
+                type="submit"
+                class="btn-hover w-full py-3 bg-forest text-sunny rounded-xl font-semibold"
+              >
+                Send Message
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
+
+      <div id="rate-modal" class="fixed inset-0 z-50 hidden">
+        <!-- Service rating / feedback modal -->
+        <div
+          class="absolute inset-0 bg-forest/80 modal-backdrop"
+          onclick="closeRateModal()"
+        ></div>
+        <div
+          class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-full max-w-lg p-4"
+        >
+          <div
+            class="card-gradient rounded-2xl p-6 md:p-8 shadow-2xl max-h-[90vh] overflow-y-auto"
+          >
+            <h3 class="font-space font-bold text-xl text-forest mb-6">
+              Rate Our Service
+            </h3>
+            <form id="rate-form" onsubmit="submitRateForm(event)">
+              <div class="mb-6 text-center">
+                <div
+                  class="star-rating flex justify-center gap-2"
+                  id="star-rating"
+                >
+                  <button type="button" class="star p-1" onclick="setRating(1)">
+                    <svg
+                      class="w-10 h-10 text-cream-dark hover:text-sunny transition-colors"
+                      fill="currentColor"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"
+                      />
+                    </svg>
+                  </button>
+                  <button type="button" class="star p-1" onclick="setRating(2)">
+                    <svg
+                      class="w-10 h-10 text-cream-dark hover:text-sunny transition-colors"
+                      fill="currentColor"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"
+                      />
+                    </svg>
+                  </button>
+                  <button type="button" class="star p-1" onclick="setRating(3)">
+                    <svg
+                      class="w-10 h-10 text-cream-dark hover:text-sunny transition-colors"
+                      fill="currentColor"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"
+                      />
+                    </svg>
+                  </button>
+                  <button type="button" class="star p-1" onclick="setRating(4)">
+                    <svg
+                      class="w-10 h-10 text-cream-dark hover:text-sunny transition-colors"
+                      fill="currentColor"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"
+                      />
+                    </svg>
+                  </button>
+                  <button type="button" class="star p-1" onclick="setRating(5)">
+                    <svg
+                      class="w-10 h-10 text-cream-dark hover:text-sunny transition-colors"
+                      fill="currentColor"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"
+                      />
+                    </svg>
+                  </button>
+                </div>
+                <input type="hidden" id="rating-value" value="0" />
+                <p id="rating-text" class="text-forest/60 text-sm mt-2">
+                  Click to rate
+                </p>
+              </div>
+              <textarea
+                id="rate-comment"
+                rows="4"
+                class="custom-input mb-4 resize-none"
+                placeholder="Share your thoughts and suggestions..."
+              ></textarea>
+              <button
+                type="submit"
+                class="btn-hover w-full py-3 bg-forest text-sunny rounded-xl font-semibold"
+              >
+                Submit Rating
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
+
+      <div
+        id="toast"
+        class="fixed bottom-4 right-4 z-50 transform translate-y-full opacity-0 transition-all duration-300"
+      >
+        <!-- Toast notification popup container -->
+        <div
+          class="bg-forest text-cream px-6 py-4 rounded-xl shadow-2xl flex items-center gap-3"
+        >
+          <span id="toast-message">Success!</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Main JavaScript file containing interactivity -->
+    <script src="printscript.js"></script>
+  </body>
+</html>
